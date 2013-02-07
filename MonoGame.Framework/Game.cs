@@ -695,10 +695,10 @@ namespace Microsoft.Xna.Framework
 			UnloadContent();
 		}
 
-        internal void ResizeWindow(bool changed)
+        internal void UpdateWindowBounds()
         {
 #if LINUX || (WINDOWS && OPENGL)
-            ((OpenTKGamePlatform)Platform).ResetWindowBounds(changed);
+            ((OpenTKGamePlatform)Platform).UpdateWindowBounds();
 #elif WINDOWS && DIRECTX
             ((MonoGame.Framework.WinFormsGamePlatform)Platform).ResetWindowBounds(changed);
 #endif
